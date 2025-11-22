@@ -1,0 +1,39 @@
+/* Form Inputs Styling */
+.contact-form-box input,
+.contact-form-box textarea,
+.contact-form-box select {
+  border: 1px solid #3D84C6;        /* blue border */
+  color: #ffffff;                   /* white text */
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: 0.3s ease;
+}
+
+.contact-form-box input::placeholder,
+.contact-form-box textarea::placeholder {
+  color: #c9c9c9;
+}
+
+/* On focus */
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+  border-color: #3D84C6;
+  box-shadow: 0 0 5px rgba(61, 132, 198, 0.6);
+  outline: none;
+}
+
+/* Label Color */
+.contact-form-box label {
+  color: #3D84C6;
+  font-weight: 500;
+}
+
+/* Make links inside contact-info blue too */
+.contact-link {
+  color: #3D84C6;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}

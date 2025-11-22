@@ -1,0 +1,65 @@
+{
+  "sections": [
+    {
+      "component": "About",
+      "path": "/about",
+      "headerTitle": "About"
+    },
+    {
+      "component": "Skills",
+      "path": "/skills",
+      "headerTitle": "Skills"
+    },
+    {
+      "component": "Education",
+      "path": "/education",
+      "headerTitle": "Education"
+    },
+    {
+      "component": "Experience",
+      "path": "/experience",
+      "headerTitle": "Experience"
+    },
+    {
+      "component": "Contact",
+      "path": "/contact",
+      "headerTitle": "Contact"
+    },
+    {
+      "component": "Projects",
+      "path": "/projects",
+      "headerTitle": "Projects"
+    },
+    {
+      "component": "Login",
+      "path": "/login",
+      "headerTitle": "Login"
+    },
+
+
+    {
+      "component": "Dashboard",
+      "path": "/dashboard",
+      "headerTitle": "Dashboard",
+      "isPrivate": true
+    },
+    {
+      "component": "DashboardProjects",
+      "path": "/dashboardProjects",
+      "headerTitle": "DashboardProjects",
+      "isPrivate": true
+    },
+    {
+      "component": "SkillDash",
+      "path": "/skillDash",
+      "headerTitle": "SkillDash",
+      "isPrivate": true
+    },
+    {
+      "component": "Formdata",
+      "path": "/formdata",
+      "headerTitle": "Formdata",
+      "isPrivate": true
+    }
+  ]
+}
