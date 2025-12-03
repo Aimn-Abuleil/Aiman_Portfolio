@@ -74,7 +74,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userRes = await fetch('http://localhost:3001/api/users');
+        const userRes = await fetch('https://aiman-portfolio-backend.onrender.com/api/users');
         const userJson = await userRes.json();
         const user = userJson[0];
 
@@ -85,11 +85,11 @@ function Dashboard() {
 
         setUserData({ name: user.name, roles: rolesArray });
 
-        const aboutRes = await fetch('http://localhost:3001/api/about');
+        const aboutRes = await fetch('https://aiman-portfolio-backend.onrender.com/api/about');
         const aboutJson = await aboutRes.json();
         setAboutData(aboutJson);
 
-        const contactRes = await fetch('http://localhost:3001/api/contact');
+        const contactRes = await fetch('https://aiman-portfolio-backend.onrender.com/api/contact');
         const contactJson = await contactRes.json();
         setContactData({
           phone: contactJson.phone,
@@ -134,7 +134,7 @@ function Dashboard() {
   const updateUser = async () => {
     setMessage('');
     try {
-      await fetch('http://localhost:3001/api/users', {
+      await fetch('https://aiman-portfolio-backend.onrender.com/api/users', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -155,7 +155,7 @@ function Dashboard() {
       if (aboutData.imageSource instanceof File)
         formData.append('image', aboutData.imageSource);
 
-      await fetch('http://localhost:3001/api/about', {
+      await fetch('https://aiman-portfolio-backend.onrender.com/api/about', {
         method: 'PUT',
         body: formData
       });
@@ -170,7 +170,7 @@ function Dashboard() {
   const updateContact = async () => {
     setMessage('');
     try {
-      await fetch('http://localhost:3001/api/contact', {
+      await fetch('https://aiman-portfolio-backend.onrender.com/api/contact', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contactData),

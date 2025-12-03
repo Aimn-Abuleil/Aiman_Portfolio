@@ -7,7 +7,7 @@ function Formdata() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/contact/form")   // your API URL
+    fetch("https://aiman-portfolio-backend.onrender.com/api/contact/form")   // your API URL
       .then(res => res.json())
       .then(data => {
         setForms(data);

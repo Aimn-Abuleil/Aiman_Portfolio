@@ -96,7 +96,7 @@ function DashboardProjects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/projects');
+      const res = await fetch('https://aiman-portfolio-backend.onrender.com/api/projects');
       const data = await res.json();
       const mappedProjects = data.projects.map(p => ({
         ...p,
@@ -144,10 +144,10 @@ function DashboardProjects() {
       if (form.image instanceof File) formData.append('image', form.image);
 
       if (form.id) {
-        await fetch(`http://localhost:3001/api/projects/${form.id}`, { method: 'PUT', body: formData });
+        await fetch(`https://aiman-portfolio-backend.onrender.com/api/projects/${form.id}`, { method: 'PUT', body: formData });
         setMessage('Project updated successfully!');
       } else {
-        await fetch('http://localhost:3001/api/projects', { method: 'POST', body: formData });
+        await fetch('https://aiman-portfolio-backend.onrender.com/api/projects', { method: 'POST', body: formData });
         setMessage('Project added successfully!');
       }
 
@@ -169,7 +169,7 @@ function DashboardProjects() {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
-    try { await fetch(`http://localhost:3001/api/projects/${id}`, { method: 'DELETE' }); setMessage('Project deleted successfully!'); fetchProjects(); }
+    try { await fetch(`https://aiman-portfolio-backend.onrender.com/api/projects/${id}`, { method: 'DELETE' }); setMessage('Project deleted successfully!'); fetchProjects(); }
     catch (err) { console.error(err); setMessage('Failed to delete project.'); }
   };
 
@@ -215,7 +215,8 @@ function DashboardProjects() {
             {/* Image */}
             <label>Image:</label>
             <input type="file" name="image" onChange={handleChange} />
-            {form.image && typeof form.image === 'string' && <img src={`http://localhost:3001/${form.image}`} alt="Preview" width="150" />}
+            {form.image && typeof form.image === 'string' && <img src={`https://aiman-portfolio-backend.onrender.com
+/${form.image}`} alt="Preview" width="150" />}
 
             <button type="submit" className="add" style={{ marginTop: '10px' }}>{form.id ? 'Update Project' : 'Add Project'}</button>
           </form>
@@ -230,7 +231,8 @@ function DashboardProjects() {
             <div key={p.id} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
               <h4>{p.title}</h4>
               <p>{p.bodyText}</p>
-              {p.image && <img src={`http://localhost:3001/${p.image}`} alt={p.title} width="150" />}
+              {p.image && <img src={`https://aiman-portfolio-backend.onrender.com
+/${p.image}`} alt={p.title} width="150" />}
               {p.links?.length > 0 && <p><strong>Links:</strong> {p.links.map(l => `${l.name}: ${l.url}`).join(', ')}</p>}
               {p.tags?.length > 0 && <p><strong>Tags:</strong> {p.tags.join(', ')}</p>}
               <button className="edit" onClick={() => handleEdit(p)}>Edit</button>
