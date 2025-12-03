@@ -117,7 +117,7 @@ function Skills() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  const apiUrls = `${apiUrl}/api/skills`;
+  const apiUrls = `https://aiman-portfolio-backend.onrender.com/api/skills`;
 
   const fetchSkills = async () => {
     try {
@@ -156,7 +156,7 @@ function Skills() {
       let url = apiUrls;
       if (editingId) {
         method = "PUT";
-        url = `${apiUrls}/${editingId}`;
+        url = `https://aiman-portfolio-backend.onrender.com/${editingId}`;
       }
 
       const res = await fetch(url, { method, body: formData });
@@ -177,7 +177,7 @@ function Skills() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`${apiUrls}/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://aiman-portfolio-backend.onrender.com/${id}`, { method: "DELETE" });
       if (res.ok) fetchSkills();
     } catch (err) {
       console.error(err);
@@ -227,7 +227,7 @@ function Skills() {
                   {skillsData[category]?.map((skill) => (
                     <div key={skill.id} className="skill-card">
                       <img
-                        src={`${apiUrl}/${skill.icon}`}
+                        src={`https://aiman-portfolio-backend.onrender.com/${skill.icon}`}
                         alt={skill.title}
                       />
                       <p>{skill.title}</p>

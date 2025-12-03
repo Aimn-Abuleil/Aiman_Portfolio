@@ -36,14 +36,14 @@ function About(props) {
 
   useEffect(() => {
     // Fetch About API directly
-    fetch(`${apiUrl}/api/about`, {
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/about`, {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
         // If imageSource is relative, prepend backend URL
         if (res.imageSource && !res.imageSource.startsWith('http')) {
-          res.imageSource = `${apiUrl}/${res.imageSource}`;
+          res.imageSource = `https://aiman-portfolio-backend.onrender.com/${res.imageSource}`;
         }
         setData(res);
       })

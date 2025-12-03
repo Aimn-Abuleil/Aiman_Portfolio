@@ -27,7 +27,7 @@ function Contact({ header }) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`${apiUrl}/api/contact`) // ✅ replaced
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/contact`) // ✅ replaced
       .then((res) => res.json())
       .then((data) => {
         setContactInfo(data);
@@ -48,7 +48,7 @@ function Contact({ header }) {
     setSuccess(false);
     setError('');
 
-    fetch(`${apiUrl}/api/contact`, { // ✅ replaced
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/contact`, { // ✅ replaced
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

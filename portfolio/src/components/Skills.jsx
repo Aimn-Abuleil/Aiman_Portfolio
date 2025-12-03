@@ -26,7 +26,7 @@ function Skills({ header }) {
 These are some of the major languages, technologies, tools and platforms I have worked with:`;
 
   useEffect(() => {
-    fetch(`${apiUrl}/api/skills`) // Directly fetch the skills API
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/skills`) // Directly fetch the skills API
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((err) => console.error(err));
@@ -49,7 +49,7 @@ These are some of the major languages, technologies, tools and platforms I have 
                     <div key={item.id} style={{ display: 'inline-block' }}>
                       <img
                         style={styles.iconStyle}
-                        src={`${apiUrl}/${item.icon}`} // prepend apiUrl here
+                        src={`https://aiman-portfolio-backend.onrender.com/${item.icon}`} // prepend apiUrl here
                         alt={item.title}
                       />
                       <p>{item.title}</p>

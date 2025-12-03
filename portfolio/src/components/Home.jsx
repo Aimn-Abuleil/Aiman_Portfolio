@@ -25,7 +25,7 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${apiUrl}/api/users`)
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/users`)
       .then((res) => res.json())
       .then((res) => {
         // If backend returns an array, take the first user

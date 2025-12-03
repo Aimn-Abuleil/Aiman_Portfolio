@@ -24,7 +24,7 @@ const Projects = ({ header }) => {
 
   useEffect(() => {
     // Fetch the Projects API
-    fetch(`${apiUrl}/api/projects`, { method: 'GET' }) // ✅ replaced
+    fetch(`https://aiman-portfolio-backend.onrender.com/api/projects`, { method: 'GET' }) // ✅ replaced
       .then((res) => res.json())
       .then((res) => {
         const parsedProjects = res.projects.map((proj) => ({
@@ -33,7 +33,7 @@ const Projects = ({ header }) => {
           tags: typeof proj.tags === 'string' ? JSON.parse(proj.tags) : proj.tags,
           image:
             proj.image && !proj.image.startsWith('http')
-              ? `${apiUrl}/${proj.image}` // ✅ replaced
+              ? `https://aiman-portfolio-backend.onrender.com/${proj.image}` // ✅ replaced
               : proj.image,
         }));
 
